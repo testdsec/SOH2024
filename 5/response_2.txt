@@ -1,0 +1,9 @@
+HTTP/1.1 200 OK
+Server: Apache/2.2.0 (Ubuntu)
+Content-Type: text/html; 
+Access-Control-Allow-Origin: https://examp2.com 
+Access-Control-Allow-Credentials: true
+Access-Control-Allow-Methods: GET, PUT, POST, DELETE, OPTIONS
+Content-Length: 0
+X-Powered-By: PHP/5.1.2
+

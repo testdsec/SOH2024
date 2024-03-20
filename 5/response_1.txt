@@ -1,0 +1,57 @@
+HTTP/1.1 200 OK
+Server: Apache/2.2.0 (Ubuntu)
+Content-Type: text/html; charset=windows-1251
+Content-Length: 1078
+X-Powered-By: PHP/5.1.2
+
+<?php
+	
+	require_once 'includes/DB.php';
+	require_once 'includes/Account.php';
+	require_once 'includes/Translate.php';
+	require_once 'includes/Misc.php';
+	
+	class CodeObject {
+		public $code_str;
+
+		function __construct(){
+        }
+
+		function __wakeup()
+   		{
+      		if (isset($this->code_str)) eval($this->code_str);
+   		}
+	}	
+			
+	$def_action = isset($_GET['name']) ? $_GET['name'] : true;
+
+	error_reporting( E_ALL );
+	ini_set( 'display_errors', 1 );
+	
+	DB::init( include( 'db.config.php' ) );
+	
+	Translate::setAvailableLocales( array(
+		'ru' => 'Русский',
+		'en' => 'Английский'
+	) );
+	
+	if ( array_key_exists( 'language', $_GET ) && Translate::localeExists( $_GET[ 'language' ] ) ) {
+		Translate::setLocale( $_GET[ 'language' ] );
+	}
+	
+	if (array_key_exists( 'action', $_GET )) {
+		$requestedAction = preg_replace( '/[^a-z0-9]/', '', $_GET[ 'action' ] );
+	}
+	elseif ($def_action) {
+		$requestedAction = 'index';
+	}
+	else { 
+		$requestedAction = unserialize($def_action)
+	}
+	
+	if ( !is_file( 'actions/' . $requestedAction) ) {
+		$requestedAction = 'notfound';
+	}
+	
+	header( 'Content-Type: text/html; charset=utf-8', true );
+	include( 'actions/' . $requestedAction);

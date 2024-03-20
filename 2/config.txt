@@ -1,0 +1,31 @@
+version: '3.8'
+services:
+ nginx:
+   image: nginx:latest
+   volumes:
+     - ./:/var/www/html
+   ports:
+     - "80:80"
+   user: 0:0
+   network_mode: host
+
+
+ php:
+   image: php:latest
+   volumes:
+     - ./:/var/www/html
+   network_mode: host
+   user: 0:0
+
+
+ mysql:
+   image: mysql:latest
+   environment:
+     MYSQL_ROOT_PASSWORD: 2YS2uL4gU0gJydpgBgTd
+     MYSQL_DATABASE: mysql
+     MYSQL_USER: mysql
+     MYSQL_PASSWORD: mysql
+   volumes:
+     - ./db:/var/lib/mysql
+   network_mode: host
+   user: 0:0

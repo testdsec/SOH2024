@@ -1,0 +1,7 @@
+fastapi==0.110.0
+lxml==5.1.0
+passlib==1.7.4
+pydantic==2.6.3
+python_jose==3.3.0
+SQLAlchemy==1.2.16
+Requests==2.31.0

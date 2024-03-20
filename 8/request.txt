@@ -1,0 +1,15 @@
+POST /api/v2/exchange HTTP/2
+Host: euphoria.store
+Cookie: access_token=eyJhbGciOiJkaXIiLCJlbmMiOiJBMTI4R0NNIn0..4yqgqEiaL-3GzdXAMaLvXw.sCHkEpDmMk7MRNLPg7jHScU7yYPMUW6ZHDq-ol8IDiCJGdfPLKWhsVouIHPhXQsWN0yWPJL3qnF6K8uN6jc8mbDBVlWv6VYwPBVqAJmyl6IaKUzXDFreZJDv-Xh-wH7nNYjG5RTQ2QQAGvb0H8m4Gz3TbA.qrCXNOCiZMMtQ6eUaSGM-g
+X-Msg-Integrity: 642833a9deadbeeeef000001:1711978665:7e55cd92f72af0f310b247bcd4a4a74e446a564393d71767f072ff2ecb3e3739
+User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:123.0) Gecko/20100101 Firefox/123.0
+Accept: */*
+Accept-Language: en-US,en;q=0.5
+Accept-Encoding: gzip, deflate, br
+Content-Type: application/json;charset=UTF-8
+Content-Length: 213
+Sec-Fetch-Dest: empty
+Sec-Fetch-Mode: cors
+Sec-Fetch-Site: same-origin
+
+{"message":"{\"amount\":{\"$eq\":\"2.0063\"},\"sourceWallet\":{\"$eq\":\"1NJe3S2uz9KwkJ3NsuTPGmcp83wuY3FH2k\"},\"dstWallet\":{\"$eq\":\"13Kqu3jD28FEcuSSY8E8PZSjVw98xVRYbe\"},\"exchangeRate\":{\"$eq\":\"32.45\"}}"}
